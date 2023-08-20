@@ -1,26 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
+import {Route,Routes } from "react-router-dom";
+import "@patternfly/react-core/dist/styles/base.css";
+import { Counter } from './components/counter/Counter';
+import { ButtonComponent } from "./components/button/ButtonComponent";
 import './App.css';
+import {
+  Breadcrumb,
+  BreadcrumbItem
+} from "@patternfly/react-core";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+  const buttonClick = () =>{
+    alert('Button Clicked');
+  }
+
+return (
+<>
+  <Breadcrumb>
+    <BreadcrumbItem to="/">Counter Page</BreadcrumbItem>
+    <BreadcrumbItem to="/button">Button Page</BreadcrumbItem>
+    <BreadcrumbItem to="#" isActive>
+      Section landing
+    </BreadcrumbItem>
+  </Breadcrumb>
+     <Routes>
+       <Route path="/" element={<Counter initialValue={0} />} />
+       <Route path="/button" element={<ButtonComponent label="button" variant={'primary'} backgroundColor="blue" size="medium" onClick={buttonClick} />} />
+    </Routes>
+</>
   );
+ 
 }
 
 export default App;
