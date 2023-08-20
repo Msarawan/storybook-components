@@ -4,19 +4,19 @@ import './ButtonComponent.css';
 
 interface ButtonComponentProps {
   label: string;
-  variant?: 'primary' | 'secondary';
+  variant: 'primary' | 'secondary';
   backgroundColor?: string;
   size?: 'small' | 'medium' | 'large';
   onClick: () => void;
 }
 
-export const ButtonComponent:FC<ButtonComponentProps> = ({ label,backgroundColor,size,onClick }) => {
+export const ButtonComponent:FC<ButtonComponentProps> = ({ label,variant,backgroundColor,size,onClick }) => {
     const buttonClasses = `custom-button ${size ? `custom-button-${size}` : ''}`;
     const buttonStyle = backgroundColor ? { backgroundColor } : {};
-  
+
   return (
    <div className='button'>
-    <Button variant='primary'  onClick={onClick} className={buttonClasses} style={buttonStyle}>
+    <Button  variant={variant === 'secondary' ? 'secondary' : 'primary'} onClick={onClick} className={buttonClasses} style={buttonStyle}>
       {label}
     </Button>
    </div>

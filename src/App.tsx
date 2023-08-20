@@ -25,7 +25,7 @@ return (
   </Breadcrumb>
      <Routes>
        <Route path="/" element={<Counter initialValue={0} />} />
-       <Route path="/button" element={<ButtonComponent label="button" variant={'primary'} backgroundColor="blue" size="medium" onClick={buttonClick} />} />
+       <Route path="/button" element={<ButtonComponent label="Click me" variant='primary' size="medium" onClick={buttonClick} />} />
     </Routes>
 </>
   );
