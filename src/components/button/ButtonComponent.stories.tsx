@@ -22,7 +22,6 @@ args:{
     console.log('Primary Button clicked');
   },
   size: "medium",
-  backgroundColor: '#0097ff',
  }
 }
 
@@ -34,6 +33,5 @@ args: {
     console.log('Secondary Button clicked');
   },
   size: "medium",
-  backgroundColor: "#7bff00",
 }
 }
